@@ -1,6 +1,6 @@
-## **Reddit Comment Sentiment Analysis (End-to-End MLOps Project)**
+## **Youtube Comment Sentiment Analysis (End-to-End MLOps Project)**
 
-Developed an end-to-end **Machine Learning–based sentiment analysis system** for Reddit comments using Natural Language Processing (NLP). The project follows modern **MLOps best practices**, leveraging **DVC for data versioning and pipeline management**, **MLflow for experiment tracking and model lifecycle management**, and **DAGsHub for centralized experiment visualization**, ensuring reproducibility, scalability, and efficient experimentation.
+Developed an end-to-end **Machine Learning–based sentiment analysis system** for Youtube comments using Natural Language Processing (NLP). The project follows modern **MLOps best practices**, leveraging **DVC for data versioning and pipeline management**, **MLflow for experiment tracking and model lifecycle management**, and **DAGsHub for centralized experiment visualization**, ensuring reproducibility, scalability, and efficient experimentation.
 
 ---
 
