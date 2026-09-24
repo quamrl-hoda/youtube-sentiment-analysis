@@ -10,7 +10,7 @@ load_dotenv()
  # Set MLflow environment variables
 DAGSHUB_USERNAME = os.getenv("DAGSHUB_USERNAME", "").strip()
 DAGSHUB_TOKEN = os.getenv("DAGSHUB_TOKEN", "").strip()
-REPO_NAME = os.getenv("REPO_NAME", "reddit-sentiment-analysis")
+REPO_NAME = os.getenv("REPO_NAME", "youtube-sentiment-analysis")
 
 os.environ["MLFLOW_TRACKING_USERNAME"] = DAGSHUB_USERNAME
 os.environ["MLFLOW_TRACKING_PASSWORD"] = DAGSHUB_TOKEN
@@ -19,7 +19,7 @@ tracking_uri = f"https://dagshub.com/{DAGSHUB_USERNAME}/{REPO_NAME}.mlflow"
 mlflow.set_tracking_uri(tracking_uri)
 
 @pytest.mark.parametrize("model_name, stage, vectorizer_path", [
-    ("reddit_sentiment_lgbm", "staging", "artifacts/models/tfidf_vectorizer.pkl"),])
+    ("youtube_sentiment_lgbm", "staging", "artifacts/models/tfidf_vectorizer.pkl"),])
 
 def test_model_with_vectorizer(model_name, stage, vectorizer_path):
     client = MlflowClient()

@@ -103,7 +103,7 @@ def load_model_and_vectorizer(model_name, model_version, vectorizer_path):
     """Load model and vectorizer from MLflow and local storage."""
     try:
         # Set the tracking URI to your DagsHub repository
-        mlflow.set_tracking_uri('https://dagshub.com/quamrl-hoda/reddit-sentiment-analysis.mlflow')
+        mlflow.set_tracking_uri('https://dagshub.com/quamrl-hoda/youtube-sentiment-analysis.mlflow')
         
         # Load model from MLflow registry
         client = MlflowClient()
@@ -127,7 +127,7 @@ def load_model_and_vectorizer(model_name, model_version, vectorizer_path):
 # Initialize the model and vectorizer
 try:
     model, vectorizer = load_model_and_vectorizer(
-        "reddit_sentiment_lgbm", 
+        "youtube_sentiment_lgbm", 
         "Staging", 
         "models/tfidf_vectorizer.pkl"  # Update path as needed
     )
@@ -138,7 +138,7 @@ except Exception as e:
 @app.route('/')
 def home():
     return jsonify({
-        "message": "Reddit Sentiment Analysis API",
+        "message": "YouTube Sentiment Analysis API",
         "status": "running",
         "endpoints": {
             "/": "This message",

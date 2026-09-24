@@ -34,9 +34,9 @@ Python, NLP, Scikit-learn / TensorFlow / PyTorch, **DVC**, **MLflow**, **DAGsHub
 ## **Project Structure**
 
 ```
-reddit-sentiment-analysis/
+youtube-sentiment-analysis/
 │
-├── .dvc/                         # DVC internal metadata (auto-generated)
+├── .dvc/                       
 ├── .github/                      # CI/CD workflows
 │
 ├── artifacts/                    # Pipeline outputs (auto-generated)
@@ -142,13 +142,13 @@ The project is fully containerized using **Docker** to ensure consistency across
 ### Build Docker Image
 
 ```bash
-docker build -t reddit-sentiment-analysis .
+docker build -t youtube-sentiment-analysis .
 ```
 
 ### Run Docker Container
 
 ```bash
-docker run -p 5000:5000 reddit-sentiment-analysis
+docker run -p 5000:5000 youtube-sentiment-analysis
 ```
 
 This launches the backend API for real-time sentiment prediction.

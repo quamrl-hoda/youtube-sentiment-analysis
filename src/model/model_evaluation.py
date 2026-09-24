@@ -182,7 +182,7 @@ def save_model_info(run_id: str, model_path: str, file_path: str) -> None:
 
 def main():
     try:
-        mlflow = setup_dagshub()
+        setup_dagshub()
         set_experiment('dvc-pipeline-runs')
         
         with mlflow.start_run() as run:
@@ -309,4 +309,4 @@ def main():
         raise
 
 if __name__ == '__main__':
-    main
+    main()

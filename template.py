@@ -5,7 +5,7 @@ import logging
 logging.basicConfig(level=logging.INFO, format='[%(asctime)s]: %(message)s:')
 
 
-project_name = "reddit-sentiment-analysis"
+project_name = "youtube-sentiment-analysis"
 
 
 list_of_files = [

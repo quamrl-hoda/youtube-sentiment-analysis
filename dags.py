@@ -13,7 +13,7 @@ def setup_dagshub():
     # Your DAGsHub credentials
     DAGSHUB_USERNAME = os.getenv('DAGSHUB_USERNAME', 'quamrl-hoda')
     DAGSHUB_TOKEN = os.getenv('DAGSHUB_TOKEN')  # Get from environment variable
-    REPO_NAME = 'reddit-sentiment-analysis'
+    REPO_NAME = 'youtube-sentiment-analysis'
     
     # Set credentials as environment variables for MLflow
     os.environ['MLFLOW_TRACKING_USERNAME'] = DAGSHUB_USERNAME

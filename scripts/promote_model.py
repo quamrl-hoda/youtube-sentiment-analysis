@@ -2,23 +2,20 @@ import os
 import sys
 import mlflow
 from mlflow.tracking import MlflowClient
-import dagshub
+from dotenv import load_dotenv
 
 # Add the project root directory to the Python path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from src.dagshub_config import setup_dagshub, set_experiment
 
-# 1. Authenticate with DagsHub
-dagshub.auth.add_app_token(
-    token=os.environ.get("DAGSHUB_TOKEN")
-)
+# Authenticate via env vars (no dagshub.auth call needed)
 setup_dagshub()
 set_experiment()
 
 client = MlflowClient()
 
-MODEL_NAME = "reddit_sentiment_lgbm"   # must EXACTLY match registered model name
+MODEL_NAME = "youtube_sentiment_lgbm"   # must EXACTLY match registered model name
 
 # 3. Get latest model version
 versions = client.search_model_versions(f"name='{MODEL_NAME}'")

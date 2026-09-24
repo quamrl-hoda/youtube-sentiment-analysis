@@ -6,7 +6,7 @@ with open("README.md", "r", encoding="utf-8") as f:
 
 __version__ = "0.0.0"
 
-REPO_NAME = "reddit-sentiment-analysis"
+REPO_NAME = "youtube-sentiment-analysis"
 AUTHOR_USER_NAME = "quamrl-hoda"
 SRC_REPO = ""
 AUTHOR_EMAIL = "qhoda434@gmail.com"

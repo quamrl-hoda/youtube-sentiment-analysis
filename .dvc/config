@@ -2,6 +2,6 @@
     remote = dagshub
 ['remote "origin"']
     url = s3://dvc
-    endpointurl = https://dagshub.com/quamrl-hoda/reddit-sentiment-analysis.s3
+    endpointurl = https://dagshub.com/quamrl-hoda/youtube-sentiment-analysis.s3
 ['remote "dagshub"']
-    url = https://dagshub.com/quamrl-hoda/reddit-sentiment-analysis.dvc
+    url = https://dagshub.com/quamrl-hoda/youtube-sentiment-analysis.dvc

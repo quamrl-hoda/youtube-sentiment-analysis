@@ -40,6 +40,9 @@ stages:
       - artifacts/models/tfidf_vectorizer.pkl
       - artifacts/interim/test_processed.csv
       - artifacts/interim/train_processed.csv
+    outs:
+      - experiment_info.json:
+          cache: false
 
 
   model_registration:

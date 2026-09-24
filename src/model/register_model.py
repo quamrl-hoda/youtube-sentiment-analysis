@@ -19,10 +19,10 @@ from src.dagshub_config import setup_dagshub, set_experiment
 logger = logging.getLogger('model_registration')
 logger.setLevel('DEBUG')
 
-console_handler = logging.StreamHandler()
+console_handler = logging.StreamHandler(sys.stdout)
 console_handler.setLevel('DEBUG')
 
-file_handler = logging.FileHandler('model_registration_errors.log')
+file_handler = logging.FileHandler('model_registration_errors.log', encoding='utf-8')
 file_handler.setLevel('ERROR')
 
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -31,6 +31,17 @@ file_handler.setFormatter(formatter)
 
 logger.addHandler(console_handler)
 logger.addHandler(file_handler)
+
+
+def _safe_str(exc):
+    """Safely convert an exception to string, falling back to repr if __str__ is broken."""
+    try:
+        s = str(exc)
+        if s is None:
+            raise TypeError
+        return s
+    except Exception:
+        return repr(exc)
 
 
 import pickle
@@ -123,7 +134,7 @@ def register_model_in_mlflow():
         model_uri = f"runs:/{run_id}/lgbm_model"
         
         # Register the model
-        model_name = "reddit_sentiment_lgbm"
+        model_name = "youtube_sentiment_lgbm"
         result = mlflow.register_model(model_uri, model_name)
         
         logger.info(f"✅ Model registered as: {model_name} (version {result.version})")
@@ -140,7 +151,7 @@ def register_model_in_mlflow():
         client.update_model_version(
             name=model_name,
             version=result.version,
-            description=f"LightGBM model for Reddit sentiment analysis. Run ID: {run_id}"
+            description=f"LightGBM model for YouTube sentiment analysis. Run ID: {run_id}"
         )
         
         # Load test data for model validation
@@ -193,7 +204,7 @@ def register_model_in_mlflow():
         return True
         
     except Exception as e:
-        logger.error(f"❌ Failed to register model: {e}")
+        logger.error("Failed to register model: %s", _safe_str(e))
         return False
 
 
@@ -217,12 +228,12 @@ def main():
         if success:
             logger.info("✅ Model registration completed successfully!")
             logger.info("📝 Model registered in MLflow Model Registry")
-            logger.info("🔗 View at: https://dagshub.com/quamrl-hoda/reddit-sentiment-analysis.mlflow")
+            logger.info("🔗 View at: https://dagshub.com/quamrl-hoda/youtube-sentiment-analysis.mlflow")
         else:
             logger.error("❌ Model registration failed")
             
     except Exception as e:
-        logger.error(f"❌ Error in main: {e}")
+        logger.error("Error in main: %s", _safe_str(e))
         raise
 
 
