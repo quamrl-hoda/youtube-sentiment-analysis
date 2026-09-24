@@ -29,8 +29,8 @@ stages:
       - model_building.max_depth
       - model_building.n_estimators
     outs:
-      - artifacts/models
-      - artifacts/models
+      - artifacts/models/lgbm_model.pkl
+      - artifacts/models/tfidf_vectorizer.pkl
   
   model_evaluation:
     cmd: python src/model/model_evaluation.py
@@ -44,7 +44,6 @@ stages:
       - experiment_info.json:
           cache: false
 
-
   model_registration:
     cmd: python src/model/register_model.py
     deps:
@@ -54,5 +53,6 @@ stages:
       - experiment_info.json
       - artifacts/interim/test_processed.csv
     outs:
-      - model_registration_info.json
-      
+      - model_registration_info.json:
+          cache: false
+

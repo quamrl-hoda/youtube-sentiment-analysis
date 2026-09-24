@@ -179,3 +179,7 @@ zc.lockfile==3.0.post1
 zipp==3.19.2
 pytest
 python-dotenv
+transformers>=4.40.0
+torch>=2.0.0
+accelerate>=0.27.0
+sentencepiece
