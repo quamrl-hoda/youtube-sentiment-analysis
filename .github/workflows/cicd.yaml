@@ -57,7 +57,7 @@ jobs:
           DAGSHUB_TOKEN: ${{ secrets.DAGSHUB_TOKEN }}
         run: |
           dvc remote remove dagshub || true
-          dvc remote add -d dagshub https://dagshub.com/quamrl-hoda/reddit-sentiment-analysis.dvc
+          dvc remote add -d dagshub https://dagshub.com/quamrl-hoda/youtube-sentiment-analysis.dvc
           dvc remote modify dagshub --local auth basic
           dvc remote modify dagshub --local user $DAGSHUB_USERNAME
           dvc remote modify dagshub --local password $DAGSHUB_TOKEN
