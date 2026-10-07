@@ -6,8 +6,8 @@ Developed an end-to-end **Machine Learning–based sentiment analysis system** f
 
 ### **Key Responsibilities & Features**
 
-* Collected, cleaned, and preprocessed large-scale Reddit comment data (tokenization, stopword removal, text normalization).
-* Engineered textual features using TF-IDF and/or word embeddings for sentiment classification.
+* Collected, cleaned, and preprocessed large-scale Youtube comment data (tokenization, stopword removal, text normalization).
+* Engineered textual features using TF-IDF for sentiment classification.
 * Built and trained sentiment classification models achieving **98% accuracy** on the validation dataset.
 * Designed and implemented **DVC pipelines** for data ingestion, preprocessing, feature engineering, training, and evaluation.
 * Integrated **MLflow** to track experiments, hyperparameters, metrics (accuracy, precision, recall, F1-score), and model artifacts.
