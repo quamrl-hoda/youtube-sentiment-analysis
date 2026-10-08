@@ -95,7 +95,7 @@ def preprocess_data(df: pd.DataFrame) -> pd.DataFrame:
         df = df[df['clean_comment'].str.strip() != '']
 
         logging.debug(
-            'Data preprocessing completed: Missing values, duplicates, and empty strings removed'
+            'Data preprocessing   completed: Missing values, duplicates, and empty strings removed'
         )
         return df
 
